@@ -1,0 +1,21 @@
+﻿@model ByteBank.Forum.ViewModels.ContaRegistrarViewModel
+@{ 
+    ViewBag.Title = "Registrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <h4>Complete o cadastro da sua conta!</h4>
+
+    /* chega as validações de formulário para a gente */
+    @Html.ValidationSummary("", new { @class="text-danger"})
+
+    /* retorna o elemento html abaixo para cada atributo do model */
+    @Html.EditorForModel()
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Registrar" class="btn btn-default"/>
+        </div>
+    </div>
+}
